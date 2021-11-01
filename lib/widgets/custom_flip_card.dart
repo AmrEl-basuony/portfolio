@@ -26,9 +26,7 @@ class CustomFlipCard extends StatelessWidget {
           flipCardController.toggleCard();
         },
         child: CustomCard(
-          [
-            Text(projectName, style: Constants().subHeader),
-          ],
+          Text(projectName, style: Constants().subHeader),
         ),
       ),
       back: MouseRegion(
@@ -36,9 +34,7 @@ class CustomFlipCard extends StatelessWidget {
           flipCardController.toggleCard();
         },
         child: CustomCard(
-          [
-            Text(projectDiscreption, style: Constants().paragraph),
-          ],
+          Text(projectDiscreption, style: Constants().paragraph),
         ),
       ),
     );

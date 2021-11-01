@@ -8,9 +8,12 @@ class WorkScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return GridView(
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisExtent: size.height / 3,
+      ),
       children: [
         CustomFlipCard("Chat app",
             "A chat app like skype with text, audio and video chat, built using firebase"),

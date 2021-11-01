@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utility/constants.dart';
 
 class CustomCard extends StatelessWidget {
-  List<Widget> widgetList = [];
-  CustomCard(this.widgetList);
+  Widget widget;
+  CustomCard(this.widget);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 0.0,
-      margin: const EdgeInsets.fromLTRB(32.0, 20.0, 32.0, 0.0),
+      margin: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
       color: Colors.transparent,
       child: Container(
         decoration: BoxDecoration(
-          color: Constants().darkBlue,
-          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          color: Constants().blue,
+          borderRadius: const BorderRadius.all(Radius.circular(16.0)),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: widgetList,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(child: widget),
         ),
       ),
     );
