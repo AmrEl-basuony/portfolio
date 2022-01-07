@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utility/constants.dart';
+import '../utility/constants.dart';
 
 class ExperienceScreen extends StatelessWidget {
-  const ExperienceScreen({
+  final Constants constants = Constants();
+  ExperienceScreen({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Experience",
-          style: Constants().header,
-        ),
-        Text(
-          "Since I am a fresh graduate i don't have actual working experience except me workring on my own projects",
-          style: Constants().subHeader,
-        )
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Experience',
+            style: constants.header,
+          ),
+          Text(
+            '''
+I have worked on multiple projects that required knowledge of consuming APIs and dealing with local and cloud storage like firebase \nand currently working as a freelancer on Upwork.''',
+            style: constants.paragraph,
+          )
+        ],
+      );
 }

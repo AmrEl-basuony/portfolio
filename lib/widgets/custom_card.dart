@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utility/constants.dart';
+import '../utility/constants.dart';
 
 class CustomCard extends StatelessWidget {
-  Widget widget;
-  CustomCard(this.widget);
+  final Widget widget;
+  const CustomCard(this.widget, {Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 0.0,
-      margin: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 8.0),
-      color: Colors.transparent,
-      child: Container(
-        decoration: BoxDecoration(
-          color: Constants().darkBlue,
-          borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+  Widget build(BuildContext context) => Card(
+        elevation: 0,
+        margin: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+        color: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Constants().darkBlue,
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Center(child: widget),
+          ),
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Center(child: widget),
-        ),
-      ),
-    );
-  }
+      );
 }

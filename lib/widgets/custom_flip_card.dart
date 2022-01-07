@@ -1,22 +1,21 @@
-import 'dart:html' as html;
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/utility/constants.dart';
-import 'package:portfolio/widgets/custom_card.dart';
+import '../utility/constants.dart';
+import 'custom_card.dart';
 
 class CustomFlipCard extends StatelessWidget {
-  String projectName, projectDiscreption;
+  final String projectName, projectDiscreption;
+  final Constants constants = Constants();
 
-  CustomFlipCard(this.projectName, this.projectDiscreption);
+  CustomFlipCard(this.projectName, this.projectDiscreption, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     FlipCardController flipCardController = FlipCardController();
     return FlipCard(
-      direction: FlipDirection.HORIZONTAL,
       fill: Fill.fillFront,
-      flipOnTouch: true,
       controller: flipCardController,
       front: MouseRegion(
         onEnter: (e) {
@@ -26,7 +25,7 @@ class CustomFlipCard extends StatelessWidget {
           flipCardController.toggleCard();
         },
         child: CustomCard(
-          Text(projectName, style: Constants().subHeader),
+          Text(projectName, style: constants.subHeader2),
         ),
       ),
       back: MouseRegion(
@@ -34,7 +33,7 @@ class CustomFlipCard extends StatelessWidget {
           flipCardController.toggleCard();
         },
         child: CustomCard(
-          Text(projectDiscreption, style: Constants().paragraph),
+          Text(projectDiscreption, style: constants.paragraph),
         ),
       ),
     );
